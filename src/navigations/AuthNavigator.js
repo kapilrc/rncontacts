@@ -1,31 +1,17 @@
 import React from 'react'
 import { createStackNavigator } from "@react-navigation/stack"
-import { Text, View } from 'react-native';
 import { LOGIN, REGISTER } from '../constants/routeNames';
+import Login from '../screens/Login';
+import Register from '../screens/Register';
 
-const Signup = () => {
-  return (
-    <View>
-      <Text>Hi from Signup</Text>
-    </View>
-  )
-}
-
-const Login = () => {
-  return (
-    <View>
-      <Text>Hi from Login</Text>
-    </View>
-  )
-}
 
 const AuthNavigator = props => {
   const AuthStack = createStackNavigator();
 
   return (
-    <AuthStack.Navigator>
+    <AuthStack.Navigator screenOptions={{headerShown: false}}>
       <AuthStack.Screen name={LOGIN} component={Login}></AuthStack.Screen>
-      <AuthStack.Screen name={REGISTER} component={Signup}></AuthStack.Screen>
+      <AuthStack.Screen name={REGISTER} component={Register}></AuthStack.Screen>
     </AuthStack.Navigator>
   )
 }

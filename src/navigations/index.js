@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { NavigationContainer } from "@react-navigation/native"
-import { Text } from 'react-native';
 import AuthNavigator from './AuthNavigator';
 import HomeNavigator from './HomeNavigator';
+import { GlobalContext } from '../context/Provider';
 
 const AppNavContainer = _ => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+
+  const {authState : { isLoggedIn }} = useContext(GlobalContext);
+
+  console.log("isLoggedIn >> ", isLoggedIn);
+
 
   return (
     <NavigationContainer>

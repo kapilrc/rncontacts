@@ -13,19 +13,17 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
 import AppNavContainer from './src/navigations';
+import GlobalProvider from './src/context/Provider';
 
 
 const App= () => {
 
   return (
-    // <SafeAreaView>
-      <AppNavContainer>
-
-      </AppNavContainer>
-    // </SafeAreaView>
-  );
+    <GlobalProvider>
+      <AppNavContainer />
+    </GlobalProvider>
+  ); 
 };
 
 const styles = StyleSheet.create({
